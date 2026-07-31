@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* class-based dark mode (toggled via ThemeContext, not just OS preference) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- lfs Effect palette ----
+     Warm ivory studio, brass/gold accent lifted from the mirror frames
+     and gilded chair legs in the salon photography, near-black ink. */
+  --color-ivory: #F6F3EC;
+  --color-ivory-soft: #EFEBE1;
+  --color-paper: #FFFFFF;
+  --color-ink: #1B1810;
+  --color-ink-soft: #4A4438;
+  --color-muted: #9B9384;
+
+  --color-noir: #15130F;
+  --color-noir-soft: #1D1A14;
+  --color-noir-surface: #221E17;
+  --color-bone: #F3EEE3;
+  --color-bone-soft: #C9C2B2;
+  --color-muted-dark: #857D6D;
+
+  --color-brass: #B08D57;
+  --color-brass-light: #D9BD8C;
+  --color-brass-dark: #8A6A3E;
+
+  --shadow-soft: 0 8px 30px -12px rgb(0 0 0 / 0.18);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-ivory text-ink font-sans antialiased;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  .dark body {
+    @apply bg-noir text-bone;
+  }
+
+  ::selection {
+    background: var(--color-brass-light);
+    color: var(--color-noir);
+  }
+
+  /* keep native scrollbars invisible on the app shell without killing scroll */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer utilities {
+  .safe-top { padding-top: env(safe-area-inset-top); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .pt-safe { padding-top: max(0.75rem, env(safe-area-inset-top)); }
+  .pb-safe { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
