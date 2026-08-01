@@ -1,33 +1,117 @@
-# lfs Effect — PWA
+# LFS Effects: The Premier Ladies' Salon in Accra, Ghana
 
-A React + Vite + Tailwind CSS v4 progressive web app for a sculptural braiding studio, installable as a standalone app on both iOS and Android. Built to match the supplied screenshot exactly, with a light and dark theme.
+LFS Effects (formerly known as **Ladies' Friend Designer Salon**) stands as the best salon in Accra, Ghana. We offer a comprehensive range of premium beauty services designed to make every client look and feel their absolute best.
 
-## Run it
+---
 
-```bash
-npm install
-npm run dev
-```
+## Our Complete Range of Salon & Beauty Services
 
-Open the printed local URL on your phone (same Wi-Fi) or in a desktop browser resized to a phone width — the layout is mobile-first and centers itself in a max-width frame on larger screens.
+### 💇‍♀️ Hair Services
+- **Haircuts & Styling** – Precision cutting for all hair types and lengths 
+- **Hair Colouring** – From natural shades to vibrant fashion colours 
+- **Highlights & Balayage** – Advanced colour techniques for dimension and depth 
+- **Hair Extensions** – Professional fitting, maintenance, and removal 
+- **Braids & Weaves** – All styles including cornrows, box braids, and custom weaves 
+- **Keratin Treatments** – Smoothing and straightening for manageable hair 
+- **Perms & Relaxers** – Safe chemical services for texture change
+- **Hair Uninstalling** – Safe removal of extensions and weaves 
+- **Deep Conditioning Treatments** – Restorative hair care for health and shine
+- **Washing & Blow-drying** – Professional cleansing and styling 
 
-## Build for production
+### 👁️ Lash & Brow Services
+- **Eyelash Extensions** – Semi-permanent, single-fibre application for natural or dramatic looks 
+- **Brow Shaping** – Threading, waxing, and tweezing for perfect arches 
+- **Brow Tinting** – Enhancing natural brow colour
+- **Lash Lifts & Tints** – Curling and darkening natural lashes
+- **Microblading** – Semi-permanent brow enhancement (advanced service)
 
-```bash
-npm run build
-npm run preview
-```
+### 💅 Nail Services
+- **Manicures** – Classic, gel, and shellac 
+- **Pedicures** – Complete foot care and nail treatment 
+- **Nail Art** – Decorative designs and advanced techniques 
+- **Nail Enhancements** – Acrylic, gel, and dip powder extensions 
+- **Hand & Foot Massage** – Relaxing therapy included with treatments
+- **Nail Repair & Restoration** – For damaged natural nails
 
-`npm run build` outputs a `dist/` folder with a generated `manifest.webmanifest` and service worker (via `vite-plugin-pwa`), so it can be installed to the home screen on iOS Safari ("Add to Home Screen") and Android Chrome ("Install app") and runs `display: standalone` (no browser chrome).
+### ✨ Face Therapies (Beautician Services)
+- **Facial Treatments** – Deep cleansing, exfoliation, and rejuvenation 
+- **Spa Facials** – Luxury multi-step treatments with massage 
+- **Microdermabrasion** – Advanced exfoliation for smoother skin 
+- **Dermaplaning** – Gentle removal of dead skin cells and fine hair 
+- **Chemical Peels** – Corrective treatments for various skin concerns
+- **Skin Analysis & Consultation** – Personalised skincare advice 
+- **Massage Therapy** – Face, neck, shoulder, and scalp massage 
+- **Cleansing Treatments** – Face, neck, and décolletage 
 
-## Structure
+### 💄 Makeup Services
+- **Bridal Makeup** – Full-service for weddings, including trials 
+- **Glam & Photo-ready Makeup** – For events, photoshoots, and special occasions 
+- **Airbrush Makeup** – Flawless, long-lasting finish 
+- **Beauty Makeup** – Everyday enhancement
+- **Makeup Consultations** – Product recommendations and application tutorials
 
-- `src/components/icons/` — every icon is a hand-drawn, animated SVG (via `framer-motion`): the comb for Styles, the framed photo for Gallery, the calendar+clock for Book, the bag for Shop, the person for Profile, plus the sun/moon theme toggle, hamburger-to-X menu, WhatsApp bubble and the logo mark.
-- `src/components/BottomNav.jsx` — the signature piece: the active tab isolates into a raised, brass-ringed bubble that glides between positions with a spring animation, exactly like the reference screenshot's floating "Book" button.
-- `src/components/PlaceholderPortrait.jsx` — a gradient + line-art stand-in for the real salon photography. Swap it for a real `<img>` wherever it's used (`Hero.jsx`, `Styles.jsx`, `Gallery.jsx`, `Shop.jsx`) — it's a one-line change per spot.
-- `src/context/ThemeContext.jsx` — light/dark mode, persisted to `localStorage`, defaults to the device's OS preference.
-- `src/pages/` — Home ("let's tour."), Styles, Gallery, Shop, Profile — one per bottom-nav tab.
+### 👰 Bridal Services (Full Wedding Package)
+- **Bridal Makeup & Hair** – Coordinated hair and makeup for the big day
+- **Bridal Fascinator Design & Styling** – Custom fascinator creation and placement to complement the bridal look
+- **Bridal Gele Styling** – Expert wrapping and styling of traditional African headwraps (gele) for brides, bridesmaids, and wedding guests
+- **Bridal Trial Sessions** – Pre-wedding trials for makeup, hair, fascinator, and gele placement
 
-## Design tokens
+### 🎩 Fascinator & Accessory Services
+- **Custom Fascinator Design** – Bespoke fascinators crafted to match any outfit or occasion
+- **Fascinator Styling & Placement** – Professional consultation and fitting for headpieces
+- **Headpiece Repairs & Restoration** – Maintenance and repair of existing fascinators and hair accessories
+- **Event Fascinators** – For weddings, graduations, church services, and formal events
 
-Defined in `src/index.css` under `@theme`: a warm ivory/near-black pairing lifted from the salon's gold mirror frames and marble floors, with a muted brass accent (`--color-brass`) used sparingly for rings, dividers and price tags. Display type is Fraunces (italic for editorial moments like "tour."); UI text is Inter.
+### 🧕 Gele (African Headwrap) Services
+- **Traditional Gele Wrapping** – Expert styling of African headwraps in various traditional and contemporary styles
+- **Bridal Gele Design** – Custom wrapping techniques for brides, tailored to complement the wedding gown and overall look
+- **Event Gele Styling** – For weddings, engagements, baby showers, church services, funerals, and formal ceremonies
+- **Gele for Bridal Parties** – Coordinated headwrap styles for bridesmaids, mothers of the bride/groom, and female family members
+- **Custom Gele Selection** – Expert guidance on fabric choice, colour coordination, and gele sizes to match any outfit
+- **Gele Maintenance & Storage** – Proper folding, preservation, and care guidance for long-lasting headwraps
+- **Gele Workshops** – Learn the art of gele wrapping with our master stylists
+
+### 🧖 Body & Wellness Services
+- **Waxing** – Full body hair removal services 
+- **Threading** – Precise facial hair removal 
+- **Spray Tanning** – Natural, streak-free self-tan application 
+- **Body Massage** – Relaxation and therapeutic massage treatments 
+- **Body Treatments** – Exfoliation and nourishing wraps
+- **Stone Therapy Massage** – Hot stone relaxation treatment 
+
+---
+
+## Why Choose LFS Effects?
+
+> *"When it comes to hair, we're not just styling – we're taking care of your hair with professionals who are experts at what they do."*
+
+At LFS Effects, we combine:
+- ✅ **Highly trained professionals** – Certified stylists, beauticians, master tailors, and gele artisans
+- ✅ **Premium products** – Using only quality brands and formulations
+- ✅ **Luxurious atmosphere** – A relaxing, spa-like environment
+- ✅ **Personalised service** – Tailored to each client's unique needs
+- ✅ **Convenience** – A true one-stop destination for all beauty, bridal, and cultural styling needs
+- ✅ **Cultural expertise** – Specialists in traditional Ghanaian attire including fugu, kente, gele wrapping, and bridal styling
+
+---
+
+## Visit Our Website
+
+🌐 **Official Website:** [**www.lfseffects.com**](https://www.lfseffects.com)
+
+Explore our full portfolio, view our gallery, browse service packages, and book your appointment online.
+
+---
+
+### Visit LFS Effects Today
+
+Experience why LFS Effects is recognised as the premier salon in Accra, Ghana. Whether you need a quick brow touch-up, a complete bridal transformation, a custom fascinator, traditional fugu tailoring, a stunning gele headwrap, or a full day of pampering, our team is ready to deliver excellence.
+
+**Book your appointment now and discover the LFS Effects difference!**
+
+---
+
+📍 **Location:** Accra, Ghana  
+📞 **Call/WhatsApp:** [Insert Phone Number]  
+📧 **Email:** [Insert Email Address]  
+🌐 **Website:** [**www.lfseffects.com**](https://www.lfseffects.com)
