@@ -112,6 +112,6 @@ Experience why LFS Effects is recognised as the premier salon in Accra, Ghana. W
 ---
 
 📍 **Location:** Accra, Ghana  
-📞 **Call/WhatsApp:** [0272831301]  
+📞 **Call/WhatsApp:** [0247748509]  
 📧 **Email:** [contact@lfseffects.com]  
 🌐 **Website:** [**www.lfseffects.com**](https://www.lfseffects.com)
