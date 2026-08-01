@@ -1,4 +1,4 @@
-# LFS Effects: The Premier Ladies' Salon in Accra, Ghana
+# LFS Effects (Formerly Ladies Friends Designer Salon): The Premier Ladies' Salon in Accra, Ghana
 
 LFS Effects (formerly known as **Ladies' Friend Designer Salon**) stands as the best salon in Accra, Ghana. We offer a comprehensive range of premium beauty services designed to make every client look and feel their absolute best.
 
