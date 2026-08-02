@@ -46,7 +46,7 @@ export default function Shop() {
 
       <div className="mt-6 grid grid-cols-2 gap-4">
         {items.sort(()=> Math.random() - 0.5 ).map((p, i) => {
-          const hasImage = Boolean(p.thumbnailUrl)
+          const hasImage = Boolean(p.imgUrl)
           return (
             <motion.div
               key={p.id}
@@ -60,7 +60,7 @@ export default function Shop() {
                   {hasImage ? (
                     <motion.img
                       key="image"
-                      src={BASE_URL+p.thumbnailUrl}
+                      src={BASE_URL+p.imgUrl}
                       alt={p.name || 'Studio product'}
                       className="absolute inset-0 h-full w-full object-cover"
                       initial={{ opacity: 0 }}
