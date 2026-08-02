@@ -1,33 +1,37 @@
-# lfs Effect — PWA
+Yes — they're already built and live in `lfseffect-backend`. Quick recap of what's there:
 
-A React + Vite + Tailwind CSS v4 progressive web app for a sculptural braiding studio, installable as a standalone app on both iOS and Android. Built to match the supplied screenshot exactly, with a light and dark theme.
+**Files/Media**
+- `POST /api/upload` — single file upload (field `file`, optional `folderName`)
+- `POST /api/upload/batch` — multiple files / whole folder upload (field `files`, optional `relativePaths` to preserve folder structure)
+- `GET /api/files/:id` — proxied file stream (this is the URL you actually put in `<img src>` / `<video src>` — never a raw Drive link, supports video seeking via Range requests)
+- `GET /api/files/:id/info` — just metadata (name, size, type) without the bytes
+- `GET /api/lfseffect/images` — the gallery endpoint, returns every image/video in `lfseffect` with ready-to-use proxied URLs
+- `GET /api/folders/:id/contents` — generic listing of any folder's contents
 
-## Run it
+**Signup**
+- `POST /api/signup` — appends a row to the auto-created "Salon Signups" sheet. Required: `fullName`, `email`, `phone`. Optional: `dateOfBirth`, `gender`, `preferredLocation`, `preferredStylist`, `hairType`, `skinType`, `allergies`, `referralSource`, `marketingConsent`, `notes`.
 
-```bash
-npm install
-npm run dev
+Example frontend usage:
+```js
+// Gallery
+const { files } = await fetch("http://localhost:5175/api/lfseffect/images").then(r => r.json());
+// files[0].url is something like "/api/files/1AbC..."
+
+<img src={`http://localhost:5175${files[0].url}`} />
+
+// Upload
+const form = new FormData();
+form.append("file", fileInput.files[0]);
+const { file } = await fetch("http://localhost:5175/api/upload", { method: "POST", body: form }).then(r => r.json());
+
+// Signup
+await fetch("http://localhost:5175/api/signup", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ fullName, email, phone }),
+});
 ```
 
-Open the printed local URL on your phone (same Wi-Fi) or in a desktop browser resized to a phone width — the layout is mobile-first and centers itself in a max-width frame on larger screens.
+One thing to set before your frontend can actually call these: `CORS_ORIGINS` in `.env` needs your frontend's dev URL (e.g. `http://localhost:5173`) or the browser will block the requests.
 
-## Build for production
-
-```bash
-npm run build
-npm run preview
-```
-
-`npm run build` outputs a `dist/` folder with a generated `manifest.webmanifest` and service worker (via `vite-plugin-pwa`), so it can be installed to the home screen on iOS Safari ("Add to Home Screen") and Android Chrome ("Install app") and runs `display: standalone` (no browser chrome).
-
-## Structure
-
-- `src/components/icons/` — every icon is a hand-drawn, animated SVG (via `framer-motion`): the comb for Styles, the framed photo for Gallery, the calendar+clock for Book, the bag for Shop, the person for Profile, plus the sun/moon theme toggle, hamburger-to-X menu, WhatsApp bubble and the logo mark.
-- `src/components/BottomNav.jsx` — the signature piece: the active tab isolates into a raised, brass-ringed bubble that glides between positions with a spring animation, exactly like the reference screenshot's floating "Book" button.
-- `src/components/PlaceholderPortrait.jsx` — a gradient + line-art stand-in for the real salon photography. Swap it for a real `<img>` wherever it's used (`Hero.jsx`, `Styles.jsx`, `Gallery.jsx`, `Shop.jsx`) — it's a one-line change per spot.
-- `src/context/ThemeContext.jsx` — light/dark mode, persisted to `localStorage`, defaults to the device's OS preference.
-- `src/pages/` — Home ("let's tour."), Styles, Gallery, Shop, Profile — one per bottom-nav tab.
-
-## Design tokens
-
-Defined in `src/index.css` under `@theme`: a warm ivory/near-black pairing lifted from the salon's gold mirror frames and marble floors, with a muted brass accent (`--color-brass`) used sparingly for rings, dividers and price tags. Display type is Fraunces (italic for editorial moments like "tour."); UI text is Inter.
+Once you get `/api/lfseffect/images` returning real data (we were debugging that a moment ago), you're ready to wire the frontend to all of these.
