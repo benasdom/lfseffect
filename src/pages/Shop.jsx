@@ -46,7 +46,7 @@ export default function Shop() {
 
       <div className="mt-6 grid grid-cols-2 gap-4">
         {items.sort(()=> Math.random() - 0.5 ).map((p, i) => {
-          const hasImage = Boolean(p.imgUrl)
+          // const hasImage = Boolean(p.imgUrl)
           return (
             <motion.div
               key={p.id}
@@ -57,10 +57,10 @@ export default function Shop() {
             >
               <div className="relative aspect-square w-full overflow-hidden rounded-xl">
                 <AnimatePresence mode="wait" initial={false}>
-                  {hasImage ? (
+                  {true ? (
                     <motion.img
                       key="image"
-                      src={BASE_URL+p.imgUrl}
+                      src={"https://gladysasumadu7-gif.github.io/bucketlfs/imgs/"+p.name}
                       alt={p.name || 'Studio product'}
                       className="absolute inset-0 h-full w-full object-cover"
                       initial={{ opacity: 0 }}
