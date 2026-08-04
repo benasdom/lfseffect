@@ -92,7 +92,7 @@ export default function ProductDetail() {
         {product.brandName || 'Untitled'}
       </h1>
       {product.price && (
-        <p className="mt-1 text-lg text-brass-dark dark:text-brass-light">{product.price}</p>
+        <p className="mt-1 text-lg text-brass-dark dark:text-brass-light">{product.price}<i><small>{" GHS"}</small></i></p>
       )}
       {product.details && (
         <p className="mt-4 text-sm leading-relaxed text-muted dark:text-muted-dark">{product.details}</p>
