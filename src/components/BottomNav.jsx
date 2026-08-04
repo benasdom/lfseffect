@@ -19,10 +19,12 @@ export default function BottomNav() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
 
-  const activeIndex = useMemo(() => {
-    const i = TABS.findIndex((t) => t.path === pathname)
-    return i === -1 ? 2 : i
-  }, [pathname])
+const activeIndex = useMemo(() => {
+  const i = TABS.findIndex((t) =>
+    t.path === '/' ? pathname === '/' : pathname === t.path || pathname.startsWith(`${t.path}/`),
+  )
+  return i === -1 ? 2 : i
+}, [pathname])
 
   const slot = 100 / TABS.length
   const bumpLeft = slot * activeIndex + slot / 2

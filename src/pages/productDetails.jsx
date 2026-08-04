@@ -67,7 +67,7 @@ export default function ProductDetail() {
           <img
             key={src ?? i}
             src={src}
-            alt={`${product.brandName || 'Product'} ${i + 1}`}
+            alt={`${product.brandName || 'Product'} ${"front.back.left.right".split(".")[(i + 1)]}`}
             loading={i === 0 ? 'eager' : 'lazy'}
             decoding="async"
             className="aspect-square w-full flex-shrink-0 snap-center rounded-2xl object-cover"
