@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PlaceholderPortrait from '../components/PlaceholderPortrait'
 import { useShopCatalog } from '../hooks/useShopCatalogue'
@@ -8,24 +7,8 @@ const SKELETON_COUNT = 4
 const INITIAL_BATCH = 12
 const BATCH_SIZE = 12
 
-function ProductImage({ src, alt }) {
-  const [loaded, setLoaded] = useState(false)
-  return (
-    <>
-      {!loaded && <PlaceholderPortrait className="absolute inset-0 h-full w-full" />}
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        onLoad={() => setLoaded(true)}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
-          loaded ? 'opacity-100' : 'opacity-0'
-        }`}
-      />
-    </>
-  )
-}
+// ✅ REMOVED: ProductImage component with state management - now just a simple img tag
+// Images appear instantly without fade-in
 
 function formatCategoryLabel(category) {
   return category.charAt(0).toUpperCase() + category.slice(1)
@@ -74,7 +57,7 @@ export default function Shop() {
           setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, items.length))
         }
       },
-      { rootMargin: '400px' },
+      { rootMargin: '100px' }, // ✅ Reduced from 400px for better performance
     )
 
     observer.observe(node)
@@ -107,21 +90,26 @@ export default function Shop() {
       )}
 
       <div className="mt-6 grid grid-cols-2 gap-4">
-        {visibleItems.map((p, i) => {
+        {visibleItems.map((p) => {
           const src = p.images?.[0]
           const hasImage = Boolean(src)
           const isSkeleton = typeof p.id === 'string' && p.id.startsWith('skeleton-')
 
           const card = (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: (i % BATCH_SIZE) * 0.04 }}
-              className="rounded-2xl border border-ink/[0.06] bg-paper p-3 shadow-sm dark:border-bone/[0.08] dark:bg-noir-surface"
-            >
+            // ✅ REMOVED: motion.div with delays and scale animation
+            // Now just a plain div - images appear instantly
+            <div className="rounded-2xl border border-ink/[0.06] bg-paper p-3 shadow-sm dark:border-bone/[0.08] dark:bg-noir-surface">
               <div className="relative aspect-square w-full overflow-hidden rounded-xl">
                 {hasImage ? (
-                  <ProductImage src={src} alt={p.brandName || 'Studio product'} />
+                  // ✅ REMOVED: ProductImage component with opacity transitions
+                  // Now just a simple img tag with lazy loading
+                  <img
+                    src={src}
+                    alt={p.brandName || 'Studio product'}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 ) : (
                   <PlaceholderPortrait className="absolute inset-0 h-full w-full" />
                 )}
@@ -129,7 +117,7 @@ export default function Shop() {
 
               {p.brandName && <p className="mt-2 font-display text-base text-ink dark:text-bone">{p.brandName}</p>}
               {p.price && <p className="text-sm text-brass-dark dark:text-brass-light">{p.price}</p>}
-            </motion.div>
+            </div>
           )
 
           return isSkeleton ? (

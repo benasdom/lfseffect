@@ -1,9 +1,8 @@
 const SHOP_JSON_URL = 'https://gladysasumadu7-gif.github.io/lfseffect/lfs.json'
-const IMAGE_BASE_URL = 'https://gladysasumadu7-gif.github.io/bucketlfs/imgs/'
+const IMAGE_BASE_URL = `${import.meta.env.BASE_URL}imgs/`
 
 export function resolveShopImageUrl(filename) {
   if (!filename) return null
-  // GitHub Pages is case-sensitive — lowercased to match the working example URL
   return IMAGE_BASE_URL + filename.toLowerCase()
 }
 
