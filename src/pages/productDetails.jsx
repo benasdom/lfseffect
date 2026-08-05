@@ -71,8 +71,6 @@ export default function ProductDetail() {
               `${product.brandName || 'Product'}
                ${"front view.back View.left View.right View".toUpperCase().split(".")[(i)]}
                `}
-            loading={i === 0 ? 'eager' : 'lazy'}
-            decoding="async"
             className="aspect-square w-full flex-shrink-0 snap-center rounded-2xl object-cover"
           />
         ))}
