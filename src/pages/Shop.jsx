@@ -106,8 +106,7 @@ export default function Shop() {
                   <img
                     src={src}
                     alt={p.brandName || 'Studio product'}
-                    loading="lazy"
-                    decoding="async"
+                    decoding="auto"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                 ) : (
