@@ -16,6 +16,8 @@ function ProductImage({ src, alt }) {
       <img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         onLoad={() => setLoaded(true)}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
           loaded ? 'opacity-100' : 'opacity-100'

@@ -18,7 +18,6 @@ function buildOrderMessage(product) {
   lines.push(``, `Link: ${window.location.href}`)
   return lines.join('\n')
 }
-
 export default function ProductDetail() {
   const { id } = useParams()
   const { catalog, loading } = useShopCatalog()
