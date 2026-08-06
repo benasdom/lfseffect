@@ -1,0 +1,14 @@
+# robots.txt for https://www.lfseffects.com/
+
+User-agent: *
+Allow: /
+
+# Keep low-value / non-content routes out of the crawl budget
+Disallow: /admin/
+Disallow: /account/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /booking/confirmation/
+Disallow: /*?*utm_
+
+Sitemap: https://www.lfseffects.com/sitemap.xml

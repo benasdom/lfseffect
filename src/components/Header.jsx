@@ -19,7 +19,7 @@ export default function Header() {
             <LogoMark className="h-5 w-5" />
           </span>
           <h1 className="font-display text-[1.55rem] italic leading-none text-ink dark:text-bone">
-            lfs Effect
+            lfs Effects
           </h1>
         </div>
 

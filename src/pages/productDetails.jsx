@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import PlaceholderPortrait from '../components/PlaceholderPortrait'
 import { useShopCatalog } from '../hooks/useShopCatalogue'
+import ServiceSeo from './ServiceSeo'
+import { serviceSchemas } from '../data/serviceschema'
 
 const WHATSAPP_NUMBER = '233247748509'
 
 function buildOrderMessage(product) {
+        <ServiceSeo schema={serviceSchemas.hair} />
   const lines = [
     `Hi! I'd like to order this item:`,
     ``,

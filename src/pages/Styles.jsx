@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion'
 import PlaceholderPortrait from '../components/PlaceholderPortrait'
+import ServiceSeo from './ServiceSeo'
+import { serviceSchemas } from '../data/serviceschema'
+
 
 const STYLES = [
   { name: 'Knotless Box Braids', time: '4–6 hrs', price: 'from GH₵450' },
@@ -10,7 +13,10 @@ const STYLES = [
 
 export default function Styles() {
   return (
+        
     <section className="mx-auto max-w-md px-5 pt-6">
+              <ServiceSeo schema={serviceSchemas.hair} />
+      
       <p className="text-[11px] font-semibold tracking-[0.28em] text-muted dark:text-muted-dark">CATALOGUE</p>
       <h2 className="mt-1.5 font-display text-3xl italic text-ink dark:text-bone">Styles.</h2>
 
