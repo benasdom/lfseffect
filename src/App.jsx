@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import Styles from './pages/Styles'
 import Gallery from './pages/Gallery'
 import Shop from './pages/Shop'
+import NotFound from './pages/NotFound'
 import Profile from './pages/Profile'
 import ProductDetail from './pages/productDetails'
 
@@ -45,6 +46,7 @@ export default function App() {
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/:id" element={<ProductDetail />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/*" element={<NotFound />} />
             </Route>
           </Routes>
         </BrowserRouter>
