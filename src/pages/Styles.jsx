@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import PlaceholderPortrait from '../components/PlaceholderPortrait'
 import ServiceSeo from './ServiceSeo'
-import { serviceSchemas } from '../data/serviceschema'
+import { serviceSchemas } from '../data/serviceSchema'
 
 
 const STYLES = [
