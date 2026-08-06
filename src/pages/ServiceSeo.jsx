@@ -1,6 +1,6 @@
 // src/components/ServiceSeo.jsx
 import { Helmet } from 'react-helmet-async'
-import { BUSINESS_ID_URL } from '../data/serviceschema'
+import { BUSINESS_ID_URL } from '../data/serviceSchema'
 
 export default function ServiceSeo({ schema }) {
   const jsonLd = {
